@@ -10,6 +10,7 @@ import { CartClientServices } from "@/shopify/services/client/cart.services.clie
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/navigation";
 
+import va from "@vercel/analytics";
 const Page = () => {
   const [createMutation] = useMutation(createCartMutation);
   const [addMutation] = useMutation(addCartItemMutation);
@@ -50,7 +51,36 @@ const Page = () => {
   return (
     <div>
       <button
+        className="CTA"
         onClick={() => {
+          va.track("offer - 1");
+        }}
+      ></button>
+      <button
+        className="CTA"
+        onClick={() => {
+          va.track("offer - 2");
+        }}
+      ></button>
+      <button
+        className="CTA"
+        onClick={() => {
+          va.track("offer - 3");
+        }}
+      ></button>
+
+      <button
+        onClick={() => {
+          va.track("checkout - 4");
+          checkout();
+        }}
+      >
+        Checkout
+      </button>
+
+      <button
+        onClick={() => {
+          va.track("checkout - 5");
           checkout();
         }}
       >
