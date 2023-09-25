@@ -1,0 +1,17 @@
+:root {
+  /* Colors and Typography */
+
+  --primaryColor: #dc0000;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
