@@ -2,6 +2,7 @@ import "./globals.css";
 import { Montserrat } from "next/font/google";
 
 import ApolloClientProvider from "@/shopify/storeFront.apollo.client";
+import { Analytics } from "@vercel/analytics/react";
 
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--montserrat" });
 
@@ -19,7 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable}`}>
       <ApolloClientProvider>
-        <body>{children}</body>
+        <body>
+          {children}
+          <Analytics />
+        </body>
       </ApolloClientProvider>
     </html>
   );
